@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>放大镜</title>
+</head>
+<style media="screen" type="text/css">
+*{
+  padding: 0px;
+  margin: 0px;
+
+}
+#left{
+  width: 800px;
+  height: 800px;
+  background: url(img/116978-106.jpg) no-repeat;
+  position: relative;
+  float: left;
+}
+#box{
+  width: 440px;
+  height: 400px;
+  background:white;
+  opacity: 0.7;
+  -webkit-filter: alpah(opacity=70);
+          filter: alpah(opacity=70);
+  position: absolute;
+  top:0px;
+  left: 0px;
+  display: none;
+}
+#right{
+  width: 880px;
+  height: 800px;
+  border: 2px solid blue;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  display: none;
+}
+#rpic{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#cover{
+  width: 800px;
+  height: 800px;
+  background-color: yellow;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+</style>
+<body>
+  <div id="left">
+    <div id="box"></div>
+    <div id="cover"></div>
+  </div>
+  <div id="right">
+    <img src="img/116978-106.jpg" alt="" id="rpic" width="3840" height="2160">
+  </div>
+</body>
+<script type="text/javascript">
+  window.onload = function(){
+    var left = document.getElementById("left");
+    var box = document.getElementById("box");
+    var right = document.getElementById("right");
+    var rpic = document.getElementById("rpic");
+    var cover = document.getElementById("cover");
+
+    // 给左侧增加鼠标移动事件
+    cover.onmousemove = function(e){
+      // 获得事件对象
+      var ev = window.event || e;
+      var mouseleft = ev.offsetX || ev.layerX;
+      var mousetop = ev.offsetY || ev.layerY;
+      // 计算色块的位置
+      var boxleft = mouseleft - 220;
+      var boxtop = mousetop - 200;
+      // 判断色块
+      if(boxleft<0){
+        boxleft=0;
+      }
+      if(boxleft>360){
+        boxleft=360;
+      }
+      if(boxtop<0){
+        boxtop=0;
+      }
+      if(boxtop>400){
+        boxtop=400;
+      }
+      // 让色块移动
+      box.style.left = boxleft+"px";
+      box.style.top = boxtop+"px";
+      //计算右侧图片的位置
+      var rpicleft = -2*boxleft;
+      var rpictop = -2*boxtop;
+      // 让右侧图片移动
+      rpic.style.left = rpicleft+"px";
+      rpic.style.top = rpictop+"px";
+    }
+
+    //给左侧加鼠标移动事件
+    cover.onmouseover = function(){
+      //让左侧色块和右侧div显示
+      box.style.display = "block";
+      right.style.display = "block";
+    }
+      //给左侧加鼠标移出事件
+      cover.onmouseout = function(){
+        box.style.display = "none";
+        right.style.display = "none";
+      }
+
+}
+</script>
+</html>

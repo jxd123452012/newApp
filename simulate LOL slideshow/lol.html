@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<style type="text/css">
+			img {
+				display: none;
+			
+				position: relative;
+			}
+			
+			#tu1 {
+				display: block;
+			}
+			
+			.dianji {
+				display: inline-block;
+				height: 35px;
+				color: white;
+				/*padding: 5px 15px;*/
+				width: 156px;
+				text-align: center;
+				line-height: 35px;
+				font-size: 14px;
+				cursor: pointer;
+			}
+			
+			#anniu {
+				width: 780px;
+				height: 35px;
+				background-color: black;
+				
+				position: absolute;
+				font-size: 0px;
+			}
+			
+			/*#anniu:hover {
+				background-color: #303030;
+			}*/
+			
+			#tu {
+				width: 780px;
+				height: 330px;
+			}
+			
+			/*.dianji:hover {
+				background-color: gray;
+			}*/
+			
+			#zuida {
+				height: 390px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="zuida">
+			<div id="tu">
+				<img src="img/1492152754 (1).png" id="tu1" />
+				<img src="img/1492407071615586410.jpg" />
+				<img src="img/1492512214.jpg" />
+				<img src="img/237844.jpg" />
+				<img src="img/238888.jpg" />
+			</div>
+			<div id="anniu">
+
+				<span class="dianji">李青</span>
+				<span class="dianji">峡谷之</span>
+				<span class="dianji">4月1</span>
+				<span class="dianji">神拳李</span>
+				<span class="dianji">设计C</span>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		//	$(document).ready(function(){
+		////	var kaishi;
+		////
+		////	function iby() {
+		////		kaishi = setInterval(lunbo, 1000)
+		////	}
+		////	iby();
+		////	kaishi = setInterval(iby, 1000)
+		//	$(".dianji").click(function() {
+		//		clearInterval(kaishi);
+		//		$("img").css("display", "none");
+		//		var bb = $(this).index();
+		//		$("img").eq(bb).fadeIn(1000);
+		//	})
+		//	
+		//	var ind1 = 0;
+		//			setInterval(function lunbo(){
+		//				ind1++;
+		//				if(ind1==5) {
+		//					ind1=0;
+		//				}
+		//				$("span").eq(ind1).trigger("click");
+		//			},1000)
+		//
+		////	function lunbo(){
+		////		ind1++;
+		////		if(ind1 == 5) {
+		////			ind1 = 0;
+		////		}
+		//////		$("span").eq(ind1).trigger("click");
+		////		
+		////	}
+		//
+		//})
+		$(document).ready(function() {
+			var ind1 = 0;
+			var rr;
+			$(".dianji").click(function(){
+				clearInterval(rr);
+				$("img").css("display", "none");
+				$(".dianji").css("background-color","");
+				var bb = $(this).index();
+				$("img").eq(bb).fadeIn(1010);
+				$(this).css("background-color","red");
+				ind1 = bb;
+				tt();
+			})
+			function tt(){
+				rr = setInterval(function(){
+					ind1++;
+					console.log(ind1);
+					if(ind1 == 5) {
+						ind1 = 0;
+					}
+					$("span").eq(ind1).trigger("click");
+				}, 3000)
+			}
+			tt();
+		})
+		
+	</script>
+
+</html>

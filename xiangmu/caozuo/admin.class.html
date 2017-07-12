@@ -1,0 +1,110 @@
+<?php
+header("Content-Type:text/html;charset=utf-8");
+date_default_timezone_set('Asia/Shanghai');
+require_once "DbUntil.class.php";
+class admin
+{
+    //保存失败信息
+    var $error;
+    //保存成功信息
+    var $success;
+    //跳转的页面
+    var $url;
+    var $db;
+    
+    public function __construct(){
+        $this->db = new DbUntil();
+    }
+    /*查看所有会员信息*/
+    public function allxinxi(){
+        
+        $sql="select * from user join vipcard on user.id=vipcard.U_id join level on user.id=level.d_id";
+        $zong=$this->db->countPages($sql,10);
+        $arr=$this->db->search($sql,array(), $con);
+        array_push($arr,$zong);
+        echo json_encode($arr);
+    }
+    /*分页*/
+    public function fenye(){
+        $sql="select * from user join vipcard on user.id=vipcard.U_id join level on user.id=level.d_id";
+        $cur_page=$_GET["yeshu"];
+        $rows=10;
+        $arr=$this->db->TongFen($sql, $cur_page, $rows);
+        $zong=$this->db->countPages($sql,10);
+        $arr1=array_push($arr, array($zong,$cur_page));
+         echo json_encode($arr);
+        
+    }
+    /*删除指定ID*/
+    public function shan(){
+        $id=$_GET["id"];
+        $sql="delete from `user` where `id`=?";
+        $sql1="delete from `vipcard` where `U_id`=?";
+        $sql2="delete from `level` where `d_id`=?";
+        $this->db->addDelUpd($sql1, array($id), $con1);
+        $this->db->addDelUpd($sql2, array($id), $con2);
+        $this->db->addDelUpd($sql, array($id), $con);
+        if($con>0){
+            echo true;
+        }else {
+            echo false;
+        }
+    }
+   /*查找指定用户*/ 
+    public function chazhao(){
+       
+        $username=$_GET["username"];
+        $sql="select * from user join vipcard on user.id=vipcard.U_id join level on user.id=level.d_id where username=?";
+        $arr=$this->db->search($sql,array($username),$con);
+        echo json_encode($arr);
+    }
+    
+    /*积分排行*/
+   public function jifenlist(){
+       $cur_page=$_GET["yeshu"];
+       $sql="SELECT * FROM user join vipcard on user.id=vipcard.U_id join level on user.id=level.d_id";
+       $zong=$this->db->countPages($sql,10);
+       $sql1="select username,jifen from user,vipcard where user.id=vipcard.u_id order by jifen desc";
+       $arr=$this->db->TongFen($sql1, $cur_page, 10);
+       array_push($arr,$zong);
+       echo json_encode($arr);
+   }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+

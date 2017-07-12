@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			img{
+				width: 500px;
+				height: 300px;
+			}
+			ul li{
+				list-style: none;
+			}
+			.main{
+				width: 1230px;
+				margin: 0 auto;
+			}
+			.main_title{
+				text-align: center;
+				padding:20px 0;
+				font-size: 30px;
+				font-weight: bold;
+				color: black;
+			}
+			.main_body{
+				width: 1230px;
+				height: 300px;
+				float: left;
+				overflow: hidden;
+			}
+			.main_body li{
+				width: 106px;
+				height: 300px;
+				float: left;
+				-webkit-transition:0.3s;
+				-o-transition:0.3s;
+				transition:0.3s;	
+			}
+			.main_body li.on{
+				width: 500px;
+			}
+			.main_body ul{
+				width: 20000px;
+				height: 300px;
+			}
+				
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="main_title">
+				手风琴
+			</div>
+			<div class="main_body">
+				<ul>
+					<li><a href=""><img src="img/01.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/02.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/03.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/04.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/05.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/06.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/07.jpg" alt="" /></a></li>
+					<li><a href=""><img src="img/08.jpg" alt="" /></a></li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("li").mouseover(function(){
+					$(this).addClass("on").siblings().removeClass("on");
+				})
+			})
+		</script>
+	</body>
+</html>

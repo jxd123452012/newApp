@@ -1,0 +1,205 @@
+#div_body {
+				width: 1403px;
+				height: 800px;
+				margin: auto;
+				border: 1px solid gainsboro;
+				
+			}
+			
+			#div_top {
+				width: 1402px;
+				height: 50px;
+				background-image:url(../img/QQ图片20170424150539.jpg);
+				float: left;
+				font-weight: bold;
+				font-family: "楷体";
+				padding: 10px 20px;
+				color: white;
+			}
+			
+			#span_top {
+				display: inline-block;
+				font-size: 30px;
+				margin-top: -3px;
+			}
+			
+			#span_top1 {
+				display: inline-block;
+				font-size: 20px;
+			}
+			
+			#body_left {
+				width: 300px;
+				height: 840px;
+				background-image: url(../img/QQ图片20170424150539.jpg);
+				float: left;
+			}
+			
+			#body_middle {
+				width: 1100px;
+				height: 750px;
+				/*	background-color: blue;*/
+				float: left;
+			}
+			
+			#middle_top1 {
+				width: 1102px;
+				height: 50px;
+				background-color: #F2DEDE;
+				border: 1px solid gainsboro;
+				font-size: 20px;
+				font-weight: bold;
+			}
+			
+			#middle_top2 {
+				width: 1100px;
+				height: 30px;
+				padding: 9px 8px;
+				/*background-color: lawngreen;*/
+			}
+			
+			#middle_top3 {
+				width: 1102px;
+				height: 40px;
+				background-color: #BCE8F1;
+				border: 1px solid darkgray;
+				margin-top: 15px;
+			}
+			
+			#middle_top4 {
+				width: 1100px;
+				height: 600px;
+				/*	background-color: darkcyan;*/
+				margin-top: 15px;
+				text-align: center;
+			}
+			
+			#inputs {
+				width: 260px;
+				height: 40px;
+			}
+			
+			#span_tu {
+				display: inline-block;
+				margin-left: 1000px;
+				color: white;
+			}
+			/*span {
+				color: white;
+			}*/
+			
+			#span_top2 {
+				display: inline-block;
+				border: 1px solid gray;
+				padding: 10px 5px;
+				margin-left: -5px;
+			}
+			
+			#btn {
+				margin-top: -1px;
+			}
+			
+			#body_left1 {
+				width: 300px;
+				height: 35px;
+				background-color: #000000;
+				* color: white;
+			}
+			
+			#span_top3 {
+				color: white;
+				padding: 8px 8px;
+			}
+			
+			#btn_1 {
+				width: 300px;
+			}
+			
+			#span_top4 {
+				display: inline-block;
+				margin-left: 250px;
+			}
+			
+			#btn_2 {
+				width: 300px;
+			}
+			
+			#span_top5 {
+				margin-left: 200px;
+			}
+			
+			#middle_top1 {
+				font-size: 25px;
+				font-family: "楷体";
+				padding: 8px 8px;
+			}
+			
+			#span_middlet1 {
+				font-size: 20px;
+				padding: 4px 8px;
+			}
+			
+			#a_middlet1 {
+				font-size: 15px;
+				color: black;
+				display: block;
+				margin-top: -25px;
+				margin-left: 35px;
+			}
+			
+			#selects {
+				width: 150px;
+				height: 30px;
+				margin: 4px 10px;
+			}
+			
+			#middle_input {
+				width: 200px;
+				height: 30px;
+			}
+			
+			#btn_mid {
+				height: 30px;
+				width: 70px;
+			}
+			
+			#middle_top4 table {
+				margin-left: 12px;
+			}
+			/*	最后结尾*/
+			
+			#zuihou {
+				width: 1102px;
+				height: 90px;
+				border: 1px solid gainsboro;
+				margin-top: 10px;
+				margin-top: 280px;
+			}
+			
+			#wei {
+				display: block;
+				margin-top: 50px;
+			}
+			
+			a:link {
+				text-decoration: none;
+			}
+			
+			a {
+				color: black;
+			}
+			
+			table {
+				border: 1px solid gainsboro;
+			}
+			#shenlue{
+				display: inline-block;
+				position: relative;
+				top: 5px;
+				
+			}
+		
+		#btn_mid1{
+			height: 30px;
+			width: 70px;
+		}

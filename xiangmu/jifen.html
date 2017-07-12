@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>积分</title>
+<style type="text/css">
+body{
+background-image: url(img/QQ图片20170606205835.png);
+}
+div{
+border: 1px solid gray;
+background: white;
+}
+#jifen{
+width: 1000px;
+height: 600px;
+position: absolute;
+top: 50%;
+margin-top: -300px;
+left: 50%;
+margin-left: -500px;
+}
+#left{
+float: left;
+margin-left: 30px;
+width: 450px;
+height: 95%;
+margin-top: 10px;
+}
+#right{
+float: left;
+margin-left: 30px;
+width: 450px;
+height: 95%;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+#paihang{
+margin-left: 200px;
+}
+
+.jl{
+margin-left: 30px;
+}
+.jl1{
+position:absolute;
+right:20px
+}
+#one{
+margin-left: 130px;
+border-color: white;
+}
+h4{
+display: inline-block;
+background:#FB3D6A;
+width: 450px;
+position: relative;
+left: -20px;
+padding: 10px 0px;
+}
+#paihang{
+left: -200px;
+text-align: center;
+}
+.jifen_xia{
+width: 420px;
+height: 82%;
+margin-left: 15px;
+}
+#jifen{
+border: 0px;
+}
+#paihang_xia{
+font-size:18px;
+font-family: "微软雅黑";
+}
+</style>
+</head>
+<a href="massage.html">返回个人信息</a>
+<body>
+<div id="jifen">
+<div id="left">
+<h4 style="margin-left: 20px;">&nbsp;我的积分：<span id="wo"></span></h4>
+<div class="jifen_xia"></div>
+</div>
+<div id="right">
+<h4 id="paihang">积分排行</h4>
+<div class="jifen_xia" id="paihang_xia">
+<div id="one"></div>
+</div>
+</div>
+</div>
+</body>
+	<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.ajax({
+				type:"get",
+				url:"http://localhost/xiangmu/index.php?class=User&action=chajifen",
+				success:function(res){
+					res=eval(res);
+					var wo=res[res.length-1];
+					$("#wo").append(wo[1]);
+					for(var i=0;i<res.length;i++){
+						res[res.length-1]="";
+						if(res[i]["username"]==undefined){
+							break;
+						}
+						if(true){
+							var a = i ;
+							a++;
+							}
+						$("#one").append("<span>"+a+"<span class='jl'></span>"+res[i]["username"]+"<span class='jl1'></span>:"+res[i]["jifen"]+"</span>"+"<br>"+"<hr>");
+						
+					}
+				}
+			});
+		})
+	</script>
+<html>

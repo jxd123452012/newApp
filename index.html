@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>自我介绍</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			html,
+			body {
+				height: 100%;
+			}
+
+			body {
+				overflow: hidden;
+			}
+
+			#bg {
+				width: 100%;
+				height: 100%;
+			}
+
+			#bg .bg-div {
+				width: 100%;
+				height: 100%;
+			}
+
+			#header {
+				width: 100%;
+				height: 50px;
+				position: fixed;
+				top: 25px;
+			}
+
+			#header .h-logo {
+				width: 220px;
+				height: 50px;
+				margin-left: 55px;
+				line-height: 50px;
+				float: left;
+			}
+
+			#header .h-logo img {
+				display: block;
+				/*防止空隙产生*/
+			}
+
+			#header .h-nav {
+				width: 450px;
+				height: 50px;
+				float: right;
+				margin-right: 55px;
+				position: relative;
+			}
+
+			#header .h-nav li {
+				list-style: none;
+				float: left;
+				line-height: 50px;
+				margin-left: 50px;
+			}
+
+			#header .h-nav li a {
+				color: rgba(255, 255, 255, .8);
+				text-decoration: none;
+				font-size: 16px;
+				font-family: "微软雅黑";
+			}
+
+			#header .h-nav #box {
+				width: 55px;
+				height: 32px;
+				border: 1px solid rgba(255, 255, 255, .8);
+				border-radius: 16px;
+				position: absolute;
+				top: 9px;
+				left: 40px;
+				/*z-index: -1;*/
+			}
+
+			#aside {
+				width: 100px;
+				height: 330px;
+				position: fixed;
+				left: 55px;
+				top: 55%;
+				margin-top: -165px;
+				background: url(img/nav.png) no-repeat;
+				padding-top: 6px;
+			}
+
+			#aside ul li {
+				list-style: none;
+				font-size: 12px;
+				color: rgba(255, 255, 255, .8);
+				font-family: "微软雅黑";
+				padding-left: 50px;
+				/*background: url(http://p4.qhimg.com/d/inn/e9a3c8a4/nav_cur.png) no-repeat;*/
+				line-height: 21px;
+				margin-bottom: 56px;
+			}
+
+			#aside ul li.on {
+				background: url(img/nav_cur.png) no-repeat;
+			}
+
+			#bg #div1 {
+				width: 100px;
+				height: 100px;
+				display: none;
+			}
+
+			#bg #div2 {
+				width: 100px;
+				height: 100px;
+				display: none;
+			}
+
+			#bg #div3 {
+				width: 100px;
+				height: 100px;
+				display: none;
+			}
+
+			#bg .e2 {
+				width: 20%;
+				height: 35%;
+				display: inline-block;
+				float: left;
+				margin-left: 10%;
+				display: none;
+				overflow: hidden;
+				color: white;
+			}
+
+			#bg #zhanshi {
+				width: 90%;
+				height: 90%;
+				margin: auto;
+				margin-top: 100px;
+			}
+
+			#bg #zhanshi img {
+				width: 100%;
+				height: 88%;
+				transition: 1s;
+			}
+
+			#bg #zhanshi img:hover {
+				transform: scaleX(1.5);
+			}
+
+			#bg .bg1-min {
+				width: 50%;
+				height: 40%;
+				background-color: #333333;
+				margin-top: 13%;
+				margin-left: 25%;
+				opacity: 0.8;
+			}
+
+			#bg .bg3-last1 {
+				width: 28%;
+				height: 220px;
+				background-color: lightgreen;
+				opacity: 0.8;
+				float: left;
+				margin-top: 10%;
+				margin-left: 19.8%;
+				overflow: hidden;
+			}
+
+			#bg .bg3-last2 {
+				width: 28%;
+				height: 220px;
+				background-color: #333333;
+				opacity: 0.8;
+				float: left;
+				margin-top: 10%;
+				margin-left: 10px;
+				overflow: hidden;
+			}
+
+			#bg .bg3-last3 {
+				width: 28%;
+				height: 220px;
+				background-color: #333333;
+				opacity: 0.8;
+				float: left;
+				margin-top: 10px;
+				margin-left: 19.8%;
+				overflow: hidden;
+			}
+
+			#bg .bg3-last4 {
+				width: 28%;
+				height: 220px;
+				background-color: lightgreen;
+				opacity: 0.8;
+				float: left;
+				margin-top: 10px;
+				margin-left: 10px;
+				overflow: hidden;
+			}
+
+			#bg .dd {
+				clear: both;
+			}
+
+			#bg .pre-font {
+				font-size: 14px;
+				font-family: "微软雅黑";
+				color: white;
+			}
+				#bg #tt img{
+					transition: 2s;
+				}
+
+			#bg #tt img:hover {
+				transform: rotateY(360deg);
+				-webkit-transform: rotateY(360deg);
+				/* Safari 和 Chrome */
+				-moz-transform: rotateY(360deg);
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+		<!--顶部导航区-->
+
+		<!--背景图片区-->
+		<div id="bg">
+			<div class="bg-div" id="lunbo">
+				<div id="header">
+					<div class="h-nav">
+						<ul>
+							<li>
+								<a href="">首页</a>
+							</li>
+							<li>
+								<a href="">个人介绍</a>
+							</li>
+							<li>
+								<a href="">我的作品</a>
+							</li>
+							<li>
+								<a href="">座右铭</a>
+							</li>
+						</ul>
+						<div id="box"></div>
+					</div>
+				</div>
+				<div>&nbsp;</div>
+				<div style="margin-top: 15%;margin-left: 48%;" id="tt">
+					<img src="img/shaui.jpg" style=" width: 200px; height: 200px;border-radius: 100px;" />
+					<h1 style=" width: 320px; margin-left: -40px;">&nbsp;&nbsp;&nbsp;Hallo !</h1>
+				</div>
+			</div>
+			<div class="bg-div" style="background: url(img/007.jpg); background-attachment: fixed; background-position: center;">
+				<div>
+					介绍
+				</div>
+				<div class="bg1-min">
+					<span id="" style="color: white; font-size: 16px;"><pre>
+
+  姓    名： 江雪冬  				    	性    别：男
+
+  出生年月：1994.12					联系电话：18696520084
+
+  学    历：专科					专    业：计算机
+
+  民    族：汉族					毕业学校：重庆电子工程学院
+
+  住    址：重庆市沙坪坝小龙坎众科天一阁
+
+  电子信箱：jiang653003796@qq.com      	个人网站：jiangxuedong.win
+</pre>
+						</span>
+				</div>
+			</div>
+			<div class="bg-div" style="background: url(img/04.jpg); background-attachment: fixed; background-position: center;">
+				<div id="my">
+					作品
+				</div>
+				<div id="zhanshi">
+					<br />
+					<div></div>
+					<div style="margin-top: 30px;" id="e4" class="e2">
+						<a href="网站项目all/shouye.html"><img src="img/gongqjun.jpg" /></a>早期网页</div>
+					<div style="margin-top: 30px;" id="e5" class="e2">
+						<a href="xiangmu/zhuye/zhuye.html"><img src="img/daqian.jpg" /></a>大千瓷器商城</div>
+					<div style="margin-top: 30px;" id="e6" class="e2">
+						<a href="fangdajing.html"><img src="img/fangdajing.jpg" /></a>放大镜</div>
+
+				</div>
+			</div>
+			<div class="bg-div" style="background: url(img/lastl.jpg); background-attachment: fixed; background-position: center;">
+				<div>天空灰</div>
+				<div style="position:relative;margin-left:50%;margin-left:13%;">
+				<div class="bg3-last1">
+					<pre class="pre-font">
+ 工作经验：
+	时间：2016年8月-2017年2月
+	公司：慕锦立科技有限公司
+	介绍： 1. web页面的开发制作；
+        	    2. 设计及配合完成项目的调试及修改；
+		  3. 负责前端页面的交互、编写动画效果。
+			专业技能：
+		  	1.熟悉HTML5/HTML、CSS3/CSS、JavaScript、
+		  	AJAX等前端web网页技术。
+		 	2.能熟练应用 DIV+CSS 样式布局设计出符合Web2.0的页面，
+		 	能使用原生JavaScript控制网页行为。
+</pre>
+				</div>
+				<div class="bg3-last2">
+					<pre class="pre-font">
+	3.熟练应用PHP+MySQL技术，能在WAMP环境下熟练编程。
+	4.能使用Photoshop进行一些简单的图片处理操作
+	5.了解json、xml等技术，并使用到项目中进行数据交互。
+框架及设计理念：
+	1.熟悉MVC、三层结构等软件设计模式。
+	2.熟悉thinkPHP框架开发网站。
+	3.熟练的使用jquery、bootstrap等前端框架。
+
+						</pre>
+				</div>
+				<div class="dd"></div>
+				<div class="bg3-last3">
+					<pre class="pre-font">
+数据库：
+	1.熟练使用MySQL、SQL Server等关系型数据库，
+	并熟练的使用sql语句操作数据。
+	2.在数据库设计和数据操作中，有一定的优化意识。
+项目经验：
+	1、大千瓷器会员管理系统
+	开发工具：zend studio、Hbuilder。
+	团队成员：6人		时间： 十天
+	使用到的技术或语言：php、sql、html5/html、css、js、jquery
+	框架等。
+
+						</pre>
+				</div>
+				<div class="bg3-last4">
+					<pre class="pre-font">
+自我评价：
+	1.对待工作认真负责，善于沟通、协调有较强的组织能力与团队精神；
+	2.活泼开朗、乐观上进、有爱心并善于施教并行；
+	3.上进心强、勤于学习,能不断提高自身的能力与综合素质。
+	4.在未来的工作中，我将以充沛的精力，刻苦钻研的精神来努力工作，
+	稳定地提高自己的工作能力，与企业同步发展。
+
+						</pre>
+				</div>
+
+			</div>
+			</div>
+		</div>
+
+		<!--侧边栏部分-->
+		<div id="aside" style="z-index: 100;">
+			<ul>
+				<li class="on">个人主页</li>
+				<li>个人介绍</li>
+				<li>我的作品</li>
+				<li>技能/工作/评价</li>
+			</ul>
+		</div>
+
+	</body>
+	<script src="js/jquery-1.11.0.js" type="text/javascript"></script>
+	<script src="js/jquery.mousewheel.js" type="text/javascript"></script>
+	<script src="js/jquery.backstretch.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		//导航栏的移动效果
+		$(function() {
+
+			$(window).load(function() {
+				$('.preloader').delay(1000).fadeOut("slow"); // set duration in brackets
+			});
+
+			// lunbo
+			$(function() {
+				jQuery(document).ready(function() {
+					$('#bg #lunbo').backstretch([
+						"img/01.jpg",
+						"img/02.jpg",
+						"img/03.jpg"
+
+					], {
+						duration: 2000,
+						fade: 1500
+					});
+				});
+			})
+
+			var timer = setInterval(function() {
+				if($(document).scrollTop()) {
+					$(document).scrollTop(0)
+				} else {
+					clearInterval(timer);
+				}
+			}, 30)
+
+			$("div.h-nav li").mouseover(function() {
+				var width = $(this).width(); //获取当前的宽度
+				var left = $(this).position().left; //获取当前距离副元素位置的左边距离
+
+				$("#box").stop(true).animate({
+					left: left + 36 + "px",
+					width: width + 28 + "px"
+				}, 500);
+
+			});
+
+			//当鼠标离开ul时
+			$("div.h-nav ul").mouseleave(function() {
+				$("#box").stop(true).animate({
+					left: '36px',
+					width: '60px'
+				}, 400);
+			});
+			//侧边栏部分-----
+
+			var index = 0;
+			var wH = $(window).height(); //获取窗口的高度
+			$(window).resize(function() {
+				wH = $(window).height();
+				$(document).scrollTop(index * wH);
+			})
+
+			$("#aside li").click(function() {
+				index = $(this).index(); //获取li的索引值
+				$(this).addClass("on").siblings().removeClass("on");
+				$("html,body").stop(true).animate({
+					scrollTop: index * wH //获取每一页的宽度
+				}, 1000);
+			})
+
+			$(document).mousewheel(function() { //当滚动的时候旁边的点页跟着滚动
+
+				var dt = arguments[1];
+				if(dt < 0) {
+					index++;
+					if(index == 1) {
+
+					}
+					if(index == 2) {
+						$("#e1").fadeIn(500);
+						$("#e2").fadeIn(2000);
+						$("#e3").fadeIn(4000);
+						$("#e4").fadeIn(6000);
+						$("#e5").fadeIn(8000);
+						$("#e6").fadeIn(10000);
+					}
+					if(index > 3)
+						index = 3;
+
+				} else {
+
+					index--;
+					if(index < 0)
+						index = 0;
+
+				}
+
+				$("#aside li").eq(index).addClass("on").siblings().removeClass("on");
+
+				$("html,body").stop(true).animate({
+
+					scrollTop: index * wH
+				}, 1000);
+
+			})
+
+		});
+	</script>
+
+</html>

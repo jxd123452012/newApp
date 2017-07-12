@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>注册</title>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<style type="text/css">
+			body {
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.beijing {
+				width: 100%;
+				height: 900px;
+				min-width: 900px;
+				background: url(img/timg.jpg) center no-repeat;
+				background-size: cover;
+			}
+			
+			form {
+				display: block;
+				width: 262px;
+				height: 500px;
+				float: right;
+				border: 1px solid gray;
+				margin-right: 50px;
+				margin-top: 50px;
+				border-radius: 5px;
+				background-image: url(img/303996.jpg);
+			}
+			
+			.one {
+				padding: 5px 30px;
+				width: 180px;
+				margin-top: 40px;
+				margin-left: 10px;
+			}
+			
+			#d1 {
+				position: relative;
+			}
+			
+			.zhuce {
+				padding: 5px 15px;
+				margin-left: 20px;
+				margin-top: 20px;
+				font-size: 15px;
+				border-radius: 5px;
+			}
+			
+			.img1 {
+				position: absolute;
+				left: 15px;
+				bottom: 4px;
+				padding: 3px;
+			}
+			
+			#d2 {
+				position: relative;
+			}
+			
+			#d3 {
+				position: relative;
+			}
+			
+			#logo {
+				display: block;
+				margin: auto;
+			}
+			
+			#tishi {
+				position: absolute;
+				top: 15px;
+				left: 30px;
+				color: red;
+				display: none;
+			}
+			.tanchuan{
+				display: none;
+				width: 400px;
+				height: 200px;
+				color: green;
+				border: 1px grey solid;
+				font-size: 25px;
+				position: absolute;
+				top: 50%;
+				margin-top: -100px;
+				left: 50%;
+				margin-left: -200px;
+				background: white;
+			}
+			.txt{
+				margin-top:80px;
+				margin-left:150px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="beijing">
+			<div class="tanchuan">
+				<p class="txt"id="txt">注册成功...</p>
+				<p class="txt"id="txt1">用户名已存在</p>
+			</div>
+			<form>
+				<img src="img/QQ图片20170424105314.png" id="logo" />
+				<div id="d1">
+					<span id="tishi" class="user">!用户名不能为空</span>
+					<img src="img/login-head.png" class="img1" />
+					<input type="text" name="username" class="one" placeholder="请输入用户名(字母和数字)" data="user"id="user" />
+				</div>
+
+				<div id="d2">
+					<span id="tishi" class="mima">!密码不能为空</span>
+					<img src="img/login-lock.png" class="img1" />
+					<input type="password" name="password" class="one" placeholder="请输入密码(6-16位字母或数字)" data="mima" id="passworder"/>
+				</div>
+				<div id="d3">
+					<span id="tishi" class="youxiang">!邮箱不能为空</span>
+					<img src="img/QQ图片20170424103607.png" class="img1" />
+					<input type="text" name="email" class="one" placeholder="请输入邮箱" data="youxiang" id="email"/>
+				</div>
+				<input type="button" class="zhuce" value="注册" id="zhuce"/>
+				<input type="button" class="zhuce" value="登录" id="denglu"/>
+			</form>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		$(function() {
+			var reg=/^[a-zA-Z]{1,3}[0-9]{1,10}$/;
+			var reg1 =/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,10}$/;
+			var reg2 = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(.com)+$/;
+			$(".user").text("!用户名不能为空");
+			$(".mima").text("!密码不能为空");
+			$(".youxiang").text("!邮箱不能为空");
+			var mima1,yx1,user1;
+			//判断输入是否为空
+			$(".one").focus(function() {
+				$(this).removeAttr("placeholder");
+				var id = $(this).attr("data");
+				id = String(id);
+				var ind = document.getElementsByClassName(id);
+				$(ind).css("display", "none");
+			})
+			$(".one").blur(function() {
+				var val = $(this).val();
+				if(val == "") {
+					$(".user").text("!用户名不能为空");
+					$(".mima").text("!密码不能为空");
+					$(".youxiang").text("!邮箱不能为空");
+					var id = $(this).attr("data");
+					id = String(id);
+					var ind = document.getElementsByClassName(id);
+					$(ind).css("display", "block");
+				}
+			})
+
+			//判断输入是否正确
+			$(".one").eq(1).blur(function() {
+				var val = $(this).val();
+				if(val != "") {
+					if(reg1.test(val) && val.length > 5 && val.length < 17) {
+						$(".mima").css("display", "none");
+						mima1=true;
+					} else {
+						$(".mima").text("!密码格式不对");
+						$(".mima").css("display", "block");
+					}
+				}
+			})
+			$(".one").eq(2).blur(function() {
+				var val = $(this).val();
+				if(val != "") {
+					if(reg2.test(val)) {
+						$(".youxiang").css("display", "none");
+						yx1=true;
+					} else {
+						$(".youxiang").text("!邮箱格式不对");
+						$(".youxiang").css("display", "block");
+					}
+				}
+			})
+			$(".one").eq(0).blur(function() {
+				var val = $(this).val();
+				if(val!=""){
+					if(reg.test(val)) {
+						$(".user").css("display", "none");
+						user1=true;
+					} else {
+						$(".user").text("!用户名格式不对");
+						$(".user").css("display", "block");
+					}
+				}
+				
+				
+			})
+			//点击注册
+			
+			$("#zhuce").click(function(){
+				console.log("aa");
+				if(user1==true&&mima1==true&&yx1==true){
+						
+				var user=$("#user").val();
+				var pass=$("#passworder").val();
+				var em=$("#email").val();
+				
+					$.ajax({
+						url:"HTTP://192.168.2.40/webWork/zuCe.php",
+						type:"get",
+						data:{
+							username:user,
+							password:pass,
+							email:em
+						},
+						success:function(res){
+							var txt=res;
+							console.log(txt);
+							if(txt=="用户名已存在"){
+								$("#txt1").css("display","block");
+								$(".tanchuan").css("display","block");
+								$("#txt").css("display","none");
+							}
+							else if(txt=="注册成功"){
+								$("#txt1").css("display","none");
+								$("#txt").css("display","block");
+								$(".tanchuan").css("display","block");
+								$("form").css("display","none");
+								setTimeout(function(){
+									window.location="denglu.html";
+								},2000)
+							}
+							
+						}
+					})
+					
+				}
+				for(var i=0;i<$(".one").length;i++){
+					if($(".one").eq(i).val()==""){
+						$("span").eq(i).css("display","block");
+					}
+				}
+				
+				var user=$("#user").val();
+				var pass=$("#passworder").val();
+				var em=$("#email").val();
+				if(user!=""&&reg.test(user)==false){
+					$(".user").text("!用户名格式不对");
+					$(".user").css("display", "block");
+				}
+				if(pass!=""&&reg1.test(pass)==false){
+					$(".mima").text("!密码格式不对");
+					$(".mima").css("display", "block");
+				}
+				if(em!=""&&reg2.test(em)==false){
+					$(".youxiang").text("!邮箱格式不对");
+					$(".youxiang").css("display", "block");
+				}
+			})
+			//点击登录
+			$("#denglu").click(function(){
+				window.location="denglu.html";
+			})	
+		})
+	</script>
+
+</html>

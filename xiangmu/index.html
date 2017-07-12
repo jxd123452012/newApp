@@ -1,0 +1,32 @@
+<?php
+header("Content-Type:textml;charset=utf-8");
+header("Access-Control-Allow-Origin:*");
+header('Content-Type: application/json');
+require_once 'User.class.php';
+require_once 'caozuo/admin.class.php';
+// require_once 'DbUntil.class.php';
+$class = "";
+$action = "";
+if(isset($_GET["class"])&isset($_GET["action"])){
+    $class = $_GET["class"];
+    $action = $_GET["action"];
+}elseif(isset($_POST["class"])&isset($_POST["action"])){
+    
+    $class = $_POST["class"];
+    $action = $_POST["action"];
+}else{
+    die("方法不匹配");
+}
+
+$obj = new $class();
+$obj->$action();
+if(isset($obj->error)){
+    echo $obj->error;
+}elseif(isset($obj->success)){
+    if(isset($obj->url)){
+        $url = $obj->url;
+        header("location:${url}");
+    }else{
+        echo $obj->success;
+    }
+}

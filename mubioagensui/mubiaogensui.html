@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			.box {
+				width: 99%;
+				height: 90%;
+			
+				margin-top: 50px;
+				margin-left: 50px;
+				position: relative;
+			}
+			.box .move{
+				width: 60px;
+				height: 60px;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				display: none;
+			}
+			
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div style="width: 99%; height: 1200px;"></div>
+			<div class="move"><img src="4d02d577b4fe276524dfcc5b563740f2.gif"/></div>
+		
+		</div>
+		
+	</body>
+	<script src="../js/jquery-1.11.0.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	//鼠标移动到元素内部去了显示隐藏的部分
+		$(".box").mouseover(function(){
+			$(".move").show();
+			
+		})
+		$(".box").mouseout(function(){
+			$(".move").hide();
+		
+		})
+		//移动move
+		$(".box").mouseover(function(e){
+			//获取鼠标到浏览器左边或者上边的值
+			var w_l = e.clientX;
+			var w_t = e.clientY;
+			//获取box到浏览器的距离
+			var l = $(".box").offset().left;
+			var t = $(".box").offset().top;
+			var n_left = w_l-l-35; 
+			var n_top = w_t-t-35;
+			//判断距离是否超出box
+			
+			//改变move的距离跟随鼠标的变化而变化
+			$(".move").css({left:n_left,top:n_top});
+			//控制放大的区域
+			//比例
+			
+		})
+	</script>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding:0;
+			}
+			#banner{
+				width: 500px;
+				height: 300px;
+				margin: 100px auto 0;
+				position: relative;
+			} 	
+			.div_img img{
+				width: 500px;
+				height: 300px;
+				position: absolute;
+			}
+			.div_img{
+				width: 500px;
+				height: 300px;
+				position: relative;
+			}
+			.btn{
+				width: 210px;
+				height: 20px;
+				position: absolute;	
+				bottom: 10px;
+				margin-left:145px;
+			}
+			.btn ul li{
+				width: 20px;
+				height: 20px;
+				list-style: none;
+				float: left;
+				background: gray;
+				color: white;
+				border-radius: 10px;
+				font-size: 12px;
+				text-align: center;
+				line-height: 20px;
+				cursor: pointer;
+				margin: 0px 2px;
+			}
+			.btn ul li.on{
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="banner">
+			<div class="div_img">
+				<img src="img/01.jpg"/>
+				<img src="img/02.jpg"/>
+				<img src="img/03.jpg"/>
+				<img src="img/04.jpg"/>
+				<img src="img/05.jpg"/>
+				<img src="img/06.jpg"/>
+				<img src="img/07.jpg"/>
+				<img src="img/08.jpg"/>
+			</div>
+			<div class="btn">
+				<ul>
+					<li class="on">1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+					<li>6</li>
+					<li>7</li>
+					<li>8</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript"src="../js/jquery-1.11.0.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				var index = 0;//定义变量index的值为0
+				$(".btn ul li").hover(function(){//给按钮绑定的hover方法
+					index = $(this).index();
+					$(this).addClass("on").siblings().removeClass("on");//给按钮li标签添加类名 实现csss样式
+					$(".div_img img").eq(index).stop(true).fadeIn().siblings().stop(true).fadeOut();
+					//给图片显示设置css3样式siblings()获取集合中的每一个元素
+				},function(){});
+				setInterval(function(){
+					index++;
+					if(index>7){//当图片的索引大于7的时候让他自身的索引值重新变为0
+						index=0;
+					}
+					$(".btn ul li").eq(index).addClass("on").siblings().removeClass("on");
+					$(".div_img img").eq(index).stop(true).fadeIn().siblings().stop(true).fadeOut();
+				},2000);
+			})
+		</script>
+	</body>
+</html>

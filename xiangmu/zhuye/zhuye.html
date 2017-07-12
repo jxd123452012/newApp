@@ -1,0 +1,452 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>黑色简单家具商城</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script src="js/slides.min.jquery.js" type="text/javascript"></script>
+	<script>
+		$(function(){
+			var startSlide = 1;
+			if (window.location.hash) {
+				startSlide = window.location.hash.replace('#','');
+			}
+			$('#slides').slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				generatePagination: true,
+				play: 5000,
+				pause: 2500,
+				hoverPause: true,
+				start: startSlide,
+				animationComplete: function(current){
+					window.location.hash = '#' + current;
+				}
+			});
+		});
+</script>
+
+<script type="text/javascript" src="js/login.js" ></script>
+</head>
+
+<body style="background-image: url(images/QQ图片20170606205835.png);">
+
+<!----top----->
+	<div id="top">
+    	<div class="maindiv">
+	<a href="../denglu.php"  style="position:absolute;top:0px;left:100px;color:red;">返回登录</a>
+        	<div class="topLeft"><a href="javascript:window.external.addFavorite('http://www.darchin.com/','大千');" target="_top">收藏我们</a>&nbsp;&nbsp;&nbsp;
+            发货至<a href="#?w=480" rel="popup1" class="poplight"><select><option>重庆市</option></select></a></div>
+            <div class="topRight">您好，欢迎<span id = "aa"></span>来到享受家商城！<a href="../denglu.html" id="denglu">[登录]</a><a href="../zhuce/zhuce.html" id="zhuce">[注册]</a> | <a href="cart.html">购物车</a> | <a href="../massage.html">个人中心</a> | &nbsp;&nbsp;
+
+            </div>
+        </div>
+    </div>
+<script>
+var div1=document.getElementsByTagName('h1')[0];
+var span1=document.getElementsByTagName('span')[0];
+div1.style.cssText='display:none;';
+span1.onmousemove=function(){div1.style.display='';};
+div1.onmouseout=function(){this.style.display='none';};
+</script>
+ <!--POPUP START-->
+		<div id="popup1" class="popup_block">
+        	<h2>欢迎来到来到享受家商城！</h2>
+            <p>我们将会根据您选择的区域，向您提供更便捷的服务。&nbsp;</p>
+            <p class="po_p">您的商品将会&nbsp;</p><div class="po_div">发货至&nbsp;<select><option>重庆市</option><option>沙坪坝</option></select></div>
+            <p><input type="button" value="开始购物" class="zc_btn" /></p>
+        </div>
+    <!----top----->
+    <!-----header-------->
+    <div class="maindiv">
+    	<div class="logo"><a href="index.html"><img src="images/logo.png" width="325" height="75" title="" /></a></div>
+         <div class="search">
+        	<p class="search_input">&nbsp;<input id="stext" type="text" size="15" name="stext" value="热门搜索：家居用品" class="s_text" onfocus="if(this.value == '热门搜索：家居用品') this.value = '';" onblur="if(this.value =='') this.value = '热门搜索：家居用品';" /><input type="submit" value="" class="s_btn" /></p>
+            <p>&nbsp;更多热门：茶具 首饰盒 果盘 落地灯</p>
+        </div>
+
+        <div class="nav">
+        	<ul>
+            	<li class="cur"><a href="index.html">商城首页</a></li>
+                <li><a href="product_list.html">促销专区</a></li>
+                <li><a href="my_account.html">会员服务</a></li>
+                <li><a href="">关于大千</a></li>
+                <li><a href="">享受家生活馆</a></li>
+                <li><a href="">联系我们</a></li>
+            </ul>
+        </div>
+
+		<div class="clear"></div>
+
+    </div>
+    <!-----header-------->
+
+    <!--------content------------>
+    <div class="maindiv">
+    	<div class="content one">
+        <!------left------->
+            <div class="oneLeft">
+            	<h3>&nbsp;产品分类</h3>
+                <ul>
+                	<b>家居用品</b>
+                    <li><a href="product_list.html">> 托盘 果盘</a></li>
+                    <li><a href="product_list.html">> 茶具 茶叶罐</a></li>
+                    <li><a href="product_list.html">> 餐厨用品</a></li>
+                    <li><a href="product_list.html">> 书挡 钟表</a></li>
+                    <li><a href="product_list.html">> 茶具 茶叶罐</a></li>
+                    <li><a href="product_list.html">> 餐厨用品</a></li>
+                </ul>
+                <ul>
+                	<b>装饰用品</b>
+                    <li><a href="">> 桌面摆件</a></li>
+                    <li><a href="">> 大型雕塑</a></li>
+                    <li><a href="">> 落地摆件</a></li>
+                    <li><a href="">> 挂饰摆件</a></li>
+                    <li><a href="">> 桌面花瓶</a></li>
+                    <li><a href="">> 储物罐</a></li>
+                </ul>
+                <ul>
+                	<b>花艺花器</b>
+                    <li><a href="">> 艺术插花</a></li>
+                    <li><a href="">> 仿真花支</a></li>
+                    <li><a href="">> 花器系列</a></li>
+                    <li><a href="">> 空间花艺</a></li>
+                    <li><a href="">> 空间花艺</a></li>
+                </ul>
+                <ul>
+                	<b>家具</b>
+                    <li><a href="">> 客厅</a></li>
+                    <li><a href="">> 餐厅</a></li>
+                    <li><a href="">> 书房</a></li>
+                    <li><a href="">> 其他</a></li>
+                </ul>
+                <h3>&nbsp;按风格分类</h3>
+                 <ul>
+                    <li><a href="">> 现代风格</a></li>
+                    <li><a href="">> 现代风格</a></li>
+                    <li><a href="">> 现代风格</a></li>
+                    <li><a href="">> 现代风格</a></li>
+                </ul>
+                 <h3>&nbsp;按材质分类</h3>
+                 <ul>
+                    <li><a href="">> 陶瓷</a></li>
+                    <li><a href="">> 树脂</a></li>
+                    <li><a href="">> 玻璃、金属</a></li>
+                    <li><a href="">> 铁艺</a></li>
+                    <li><a href="">> 陶瓷</a></li>
+                    <li><a href="">> 树脂</a></li>
+                </ul>
+                 <h3>&nbsp;折扣专区</h3>
+                 <ul>
+                    <li><a href="">> 5折区</a></li>
+                    <li><a href="">> 8折区</a></li>
+                </ul>
+            </div>
+         <!------left------->
+         <!------right------->
+            <div class="oneRight">
+                <!------------>
+                <div id="slides">
+                    <div class="slides_container">
+                        <div class="slide"><a href="#" title="" target="_blank"><img src="images/main_152.jpg" width="790" height="400"  alt=""></a></div>
+                        <div class="slide"><a href="#" title="" target="_blank"><img src="images/main_155.jpg" width="790" height="400" alt=""></a></div>
+                        <div class="slide"><a href="#" title="" target="_blank"><img src="images/main_152.jpg" width="790" height="400"  alt=""></a></div>
+                        <div class="slide"><a href="#" title="" target="_blank"><img src="images/main_155.jpg" width="790" height="400" alt=""></a></div>
+                        <div class="slide"><a href="#" title="" target="_blank"><img src="images/main_152.jpg" width="790" height="400" alt=""></a></div>
+                        <div class="slide"><a href="#" title="" target="_blank"><img src="images/main_152.jpg" width="790" height="400" alt=""></a></div>
+                    </div>
+                </div>
+                <!----------------->
+
+                 <div class="pageLeft" id="pageLeft" onMouseOver="this.className='pageLOver'" onmouseout="this.className='pageLeft'">
+                    <img src="images/main_6.jpg" width="15" height="120" alt="" /></div>
+
+                <div class="box-163css2">
+                      <div class="rexiaoPic2" >
+                        <ul class="sell_order" id="sell_order" >
+                            <li><a href="product_list.html" target="_blank"><img src="images/main_8.jpg" width="120" height="120" alt="" /></a><p>素色树脂摆件</p><span>￥369-1110</span></li>
+                            <li><a href="product_list.html" target="_blank"><img src="images/main_9.jpg" width="120" height="120" alt="" /></a><p>素色树脂摆件</p><span>￥369-1110</span></li>
+                            <li><a href="#" target="_blank"><img src="images/main_10.jpg" width="120" height="120" alt="" /></a><p>素色树脂摆件</p><span>￥369-1110</span></li>
+                            <li><a href="#" target="_blank"><img src="images/main_8.jpg" width="120" height="120" alt="" /></a><p>素色树脂摆件</p><span>￥369-1110</span></li>
+                            <li><a href="#" target="_blank"><img src="images/main_10.jpg" width="120" height="120" alt="" /></a><p>素色树脂摆件</p><span>￥369-1110</span></li>
+                            <li><a href="#" target="_blank"><img src="images/main_11.jpg" width="120" height="120" alt="" /></a><p>素色树脂摆件</p><span>￥369-1110</span></li>
+                            <li><a href="#" target="_blank"><img src="images/main_8.jpg" width="120" height="120" alt="" /></a><p>素色树脂摆件</p><span>￥369-1110</span></li>
+                          </ul>
+                        <ul class="sell_order_t" id="sell_order_t"></ul>
+                      </div>
+                </div>
+
+              <div class="pageRight" id="pageRight" onMouseOver="this.className='pageROver'" onmouseout="this.className='pageRight'">
+                <img src="images/main_7.jpg" width="15" height="120" alt="" /></div>
+
+          <!-----------STAR**img*---------->
+            </div>
+          <!------right------->
+        </div>
+
+        <div class="content">
+            <!-----家居用品-------->
+        	<div class="c_title"><img src="images/main_2.jpg" width="128" height="32" title="" /><p>&nbsp;&nbsp;<a href="" target="_blank">托盘 果盘</a> │ <a href="" target="_blank">首饰</a>
+   <a href="" target="_blank">盒相架</a> │<a href="" target="_blank">茶具 茶叶罐</a> │ <a href="" target="_blank">餐厨用品</a> │ <a href="" target="_blank">书挡 钟表</a> │ <a href="" target="_blank">台灯 落地灯</a></p></div>
+            <div><img src="images/main_155.jpg" width="990" height="280" title="" /></div>
+
+            <div class="Citem">
+            	<ul>
+                	<li>
+                        <div class="item_img"><a href="" target="_blank"><img src="images/main_10.jpg" width="320" height="320" title="" /></a><p>梅瓶系列茶具（一壶四杯）</p></div>
+                    	<div class="item_info">
+                        	<p><b>￥670</b>原价：￥780</p>
+                            <p><font>累计售出：20件</font><span>茶具茶叶罐 ></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_img"><a href="" target="_blank"><img src="images/main_10.jpg" width="320" height="320" title="" /></a><p>梅瓶系列茶具（一壶四杯）</p></div>
+                    	<div class="item_info">
+                        	<p><b>￥670</b>原价：￥780</p>
+                            <p><font>累计售出：20件</font><span>茶具茶叶罐 ></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_img"><a href="" target="_blank"><img src="images/main_11.jpg" width="320" height="320" title="" /></a><p>梅瓶系列茶具（一壶四杯）</p></div>
+                    	<div class="item_info">
+                        	<p><b>￥670</b>原价：￥780</p>
+                            <p><font>累计售出：20件</font><span>茶具茶叶罐 ></span></p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <!------------->
+            <!-----装饰用品-------->
+        	<div class="c_title"><img src="images/main_1.jpg" width="130" height="32" title="" /><p>&nbsp;&nbsp;<a href="" target="_blank">桌面摆件</a> │ <a href="" target="_blank">大型雕塑</a>
+   <a href="" target="_blank">落地摆件</a> │<a href="" target="_blank">挂饰摆件</a> │ <a href="" target="_blank">桌面花瓶</a> │ <a href="" target="_blank">储物罐</a> │ <a href="" target="_blank">烛台</a></p></div>
+            <div><img src="images/main_155.jpg" width="990" height="280" title="" /></div>
+
+            <div class="Citem">
+            	<ul>
+                	<li>
+                        <div class="item_img"><a href="" target="_blank"><img src="images/main_11.jpg" width="320" height="320" title="" /></a><p>梅瓶系列茶具（一壶四杯）</p></div>
+                    	<div class="item_info">
+                        	<p><b>￥670</b>原价：￥780</p>
+                            <p><font>累计售出：20件</font><span>茶具茶叶罐 ></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_img"><a href="" target="_blank"><img src="images/main_10.jpg" width="320" height="320" title="" /></a><p>梅瓶系列茶具（一壶四杯）</p></div>
+                    	<div class="item_info">
+                        	<p><b>￥670</b>原价：￥780</p>
+                            <p><font>累计售出：20件</font><span>茶具茶叶罐 ></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_img"><a href="" target="_blank"><img src="images/main_11.jpg" width="320" height="320" title="" /></a><p>梅瓶系列茶具（一壶四杯）</p></div>
+                    	<div class="item_info">
+                        	<p><b>￥670</b>原价：￥780</p>
+                            <p><font>累计售出：20件</font><span>茶具茶叶罐 ></span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!------------->
+            <!----花艺花器--------->
+            	<div class="c_title"><img src="images/main_3.jpg" width="130" height="32" title="" /><p>&nbsp;&nbsp;<a href="" target="_blank">艺术插花</a> │ <a href="" target="_blank">仿真花支</a>
+   <a href="" target="_blank">花器系列</a> │<a href="" target="_blank">空间花艺</a></p></div>
+            <div><img src="images/main_155.jpg" width="990" height="280" title="" /></div>
+
+            <div class="Citem">
+            	<ul>
+                	<li>
+                        <div class="item_img"><a href="" target="_blank"><img src="images/main_11.jpg" width="320" height="320" title="" /></a><p>梅瓶系列茶具（一壶四杯）</p></div>
+                    	<div class="item_info">
+                        	<p><b>￥670</b>原价：￥780</p>
+                            <p><font>累计售出：20件</font><span>茶具茶叶罐 ></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_img"><a href="" target="_blank"><img src="images/main_10.jpg" width="320" height="320" title="" /></a><p>梅瓶系列茶具（一壶四杯）</p></div>
+                    	<div class="item_info">
+                        	<p><b>￥670</b>原价：￥780</p>
+                            <p><font>累计售出：20件</font><span>茶具茶叶罐 ></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_img"><a href="" target="_blank"><img src="images/main_11.jpg" width="320" height="320" title="" /></a><p>梅瓶系列茶具（一壶四杯）</p></div>
+                    	<div class="item_info">
+                        	<p><b>￥670</b>原价：￥780</p>
+                            <p><font>累计售出：20件</font><span>茶具茶叶罐 ></span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!------------->
+            <!-----家居-------->
+        	<div class="c_title"><img src="images/main_4.jpg" width="78" height="32" title="" /><p>&nbsp;&nbsp;<a href="" target="_blank">客厅家具</a> │ <a href="" target="_blank">餐厅家具</a>
+   <a href="" target="_blank">书房家具</a> │<a href="" target="_blank">其他家具</a></p></div>
+            <div><img src="images/main_155.jpg" width="990" height="280" title="" /></div>
+
+            <div class="Citem">
+            	<ul>
+                	<li>
+                        <div class="item_img"><a href="product_list.html" target="_blank"><img src="images/main_11.jpg" width="320" height="320" title="" /></a><p>梅瓶系列茶具（一壶四杯）</p></div>
+                    	<div class="item_info">
+                        	<p><b>￥670</b>原价：￥780</p>
+                            <p><font>累计售出：20件</font><span>茶具茶叶罐 ></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_img"><a href="product_list.html" target="_blank"><img src="images/main_10.jpg" width="320" height="320" title="" /></a><p>梅瓶系列茶具（一壶四杯）</p></div>
+                    	<div class="item_info">
+                        	<p><b>￥670</b>原价：￥780</p>
+                            <p><font>累计售出：20件</font><span>茶具茶叶罐 ></span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item_img"><a href="" target="_blank"><img src="images/main_11.jpg" width="320" height="320" title="" /></a><p>梅瓶系列茶具（一壶四杯）</p></div>
+                    	<div class="item_info">
+                        	<p><b>￥670</b>原价：￥780</p>
+                            <p><font>累计售出：20件</font><span>茶具茶叶罐 ></span></p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!------------->
+        </div>
+
+
+    </div>
+    <!--------content------------>
+
+    <!-----------footer-------->
+    <div id="footer">
+    	<div class="footer_from">
+            <img src="images/main_154.jpg" width="358" height="150" alt="" />
+            <div class="footer_info">
+                <h3>撷取大千世界精华，创造饰品的大千世界</h3>
+                <p>珠海大千家居饰品有限公司创立于1999年7月，是国内最早从事家居饰品经营的专业企业之一。历经十多年的发展已成为一家集产品开发、生产、销售于一体的国内知名家居企业。
+联系电话：0756-2298829     官方网站：www.777moban.com</p>
+            </div>
+        </div>
+    </div>
+    <div class="maindiv">
+    	<div class="footer_list">
+        	<ul>
+            	<li><span>购物指南</span></li>
+                <li><a href="" target="_blank">购物提示</a></li>
+                <li><a href="" target="_blank">购物流程</a></li>
+                <li><a href="" target="_blank">常见问题</a></li>
+            </ul>
+            <ul>
+            	<li><span>支付方式</span></li>
+                <li><a href="" target="_blank">在线支付</a></li>
+                <li><a href="" target="_blank">线下转账</a></li>
+            </ul>
+            <ul>
+            	<li><span>配送说明</span></li>
+                <li><a href="" target="_blank">配送范围</a></li>
+                <li><a href="" target="_blank">收费标准</a></li>
+            </ul>
+            <ul>
+            	<li><span>售后服务</span></li>
+                <li><a href="" target="_blank">售后政策</a></li>
+                <li><a href="" target="_blank">退款说明</a></li>
+                <li><a href="" target="_blank">退换货流程</a></li>
+            </ul>
+            <ul>
+            	<li><span>会员服务</span></li>
+                <li><a href="" target="_blank">特色服务</a></li>
+                <li><a href="" target="_blank">门店预约</a></li>
+            </ul>
+            <ul>
+            	<li><span>其他平台</span></li>
+                <li><a href="" target="_blank">天猫旗舰店</a></li>
+                <li><a href="" target="_blank">淘宝直营店</a></li>
+            </ul>
+            <ul>
+            	<li><span>联系我们</span></li>
+                <li><a href="" target="_blank">总部信息</a></li>
+                <li><a href="" target="_blank">分公司信息</a></li>
+                <li><a href="" target="_blank">直销中心</a></li>
+            </ul>
+            <ul>
+            	<li><span>关注我们</span></li>
+                <li><a href="" target="_blank">官方微博</a></li>
+                <li><a href="" target="_blank">官方微信</a></li>
+            </ul>
+        </div>
+        <div class="footer_a">
+        	<p><a href="" target="_blank">关于大千</a>   &nbsp;|&nbsp;   <a href="" target="_blank">《大千家》杂志</a>   &nbsp;|&nbsp;   <a href="" target="_blank">享受家生活馆</a>  &nbsp;|&nbsp;
+            <a href="" target="_blank">人才招聘</a>  &nbsp;|&nbsp;  <a href="" target="_blank">联系我们</a>  &nbsp;|&nbsp;  <a href="" target="_blank">友情链接</a></p>
+            <p>Copyright@2005-2012 www.darchin.com All Rights Reserved　　粤ICP备10000402号-1</p><br />
+        </div>
+    </div>
+
+
+<div id="divQQbox"  class="qqbox" onmouseover="show()" onmouseout="hideMsgBox(event)">
+	<div id="meumid" class="qqlv" >
+    	<ul>
+        	<li><a href="#" target="_blank"><img src="images/main_12.jpg" width="92" height="92" title="" /></a></li>
+            <li><a href="#" target="_blank"><img src="images/main_12.jpg" width="92" height="92" title="" /></a></li>
+            <li><a href="#" target="_blank"><img src="images/main_12.jpg" width="92" height="92" title="" /></a></li>
+        </ul>
+        <a href="cart.html"><p><label>29</label></p></a>
+         <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody>
+               <tr>
+                 <td height="30" align="center">
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=852640535&site=qq&menu=yes">
+                    <img border="0" src="http://wpa.qq.com/pa?p=2:852640535:41" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+                 </td>
+               </tr>
+                <tr>
+                 <td height="30" align="center">
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=271777289&site=qq&menu=yes">
+                    <img border="0" src="http://wpa.qq.com/pa?p=2:271777289:41" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+                 </td>
+               </tr>
+                <tr>
+                 <td height="30" align="center">
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=852640535&site=qq&menu=yes">
+                    <img border="0" src="http://wpa.qq.com/pa?p=2:852640535:41" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+                 </td>
+               </tr>
+               <tr><td>&nbsp;</td></tr>
+             </tbody>
+           </table>
+    </div>
+ </div>
+<script type="text/javascript" src="js/online.js"></script>
+
+
+
+
+<script language="javascript" type="text/javascript" src="js/sellImg.js"></script>
+<script type="text/javascript">
+
+			$.ajax({
+				type:"get",
+				url:"http://localhost/xiangmu/index.php?class=User&action=session",
+				success:function(res){
+
+					if(res==""){
+						$("#aa").append("请登录");
+					}else{
+						$("#aa").append(res);
+					}
+				}
+			});
+			$(document).ready(function(){
+				$.ajax({
+					type:"get",
+					url:"http://localhost/xiangmu/index.php?class=User&action=session",
+					success:function(res){
+						if(res!=""){
+							$("#denglu").css("display","none");
+							$("#zhuce").css("display","none");
+						}
+					}
+				});
+			})
+	</script>
+</body>
+</html>

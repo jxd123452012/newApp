@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人信息</title>
+		<style type="text/css">
+			#zhuce{
+				border: 1px gray solid;
+				width: 300px;
+				height: 400px;
+				position: absolute;
+				top: 50%;
+				margin-top: -16%;
+				left: 50%;
+				margin-left: -150px;
+				border-radius: 15px;
+			}
+			label{
+				margin-left:10px;
+			}
+		</style>
+	</head>
+	<body style="background-image: url(img/QQ图片20170606205835.png);">
+		<a href="denglu.php">返回登录</a><br/>
+		<a href="zhuye/zhuye.php">返回主页</a>
+			<div id="zhuce">
+				<h1 align="center">个人信息</h1>
+				<label>
+					用户名：<span></span>
+				</label>
+				<br>				
+				<label>
+					真实姓名：<span></span>
+				</label>
+				<br>
+				<label>
+					住址：<span></span>
+				</label>
+				<br>
+				<label>
+					电话：<span></span>
+				</label>
+				<br>
+				<label>
+					email：<span></span>
+				</label>
+				<br>
+				<label>
+					信用卡：<span></span>
+				</label>
+				<br>				
+				<label>
+					注册时间：<span></span>
+				</label>
+				<br>
+				<label>
+					<a href = "xiugai.php">修改个人信息</a>
+				</label>
+				<label>
+					<a href = "chongzhi.php">积分充值</a>
+				</label>				
+				<label>
+					<a href = "jifen.html">积分查询</a>
+				</label>								
+			</div>
+	</body>
+	<script src="js/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(
+				function(){
+					$.ajax({
+						type:"post",
+						datatype:"json",
+						url:"http://localhost/xiangmu/index.php?class=User&action=shuju",
+						success:function(res){
+								 res=eval(res);
+								$("span").eq(0).append(res[0]["username"]);
+								$("span").eq(1).append(res[0]["name"]);
+								$("span").eq(2).append(res[0]["dizhi"]);
+								$("span").eq(3).append(res[0]["phone"]);
+								$("span").eq(4).append(res[0]["email"]);
+								$("span").eq(5).append(res[0]["kahao"]);
+								$("span").eq(6).append(res[0]["time"]);
+					}
+				})
+			})	
+		
+	</script>
+</html>

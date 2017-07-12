@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		.zq{
+			color: lightgreen;
+		}
+		.cw{
+			color:red;
+		}
+		body{
+			background-image: url(img/trim.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		form input{
+			width: 200px;
+			height: 20px;
+		}
+		form{
+		margin-left: 10%;
+		margin-top: 10%;
+		font-family: "楷体";
+		}
+		
+		#anniu{
+			width:100px;
+			height: 30px;
+		}
+		fieldset{
+			width: 35%;
+			margin-top: 10%;
+			position: relative;
+		}
+		.gb{
+			display: inline-block;
+			width: 32px;
+		}
+		input{
+			margin-top: 2%;
+		}
+		</style>
+	</head>
+
+	<body>
+		<fieldset>
+			<legend style="margin: auto;color: red;font-weight: bold;font-family: '楷体';">数据添加</legend>
+		<form action="http://192.168.2.40/webWork/addData.php" method="get" name="form">
+			<div>
+				任务等级：
+				<input type="text" name="dengji" class="rwdj" value="" placeholder="请输入两位数中文..."/><span id="zq" style="display: none;" class="zq">输入正确</span>
+				<span id="cw" style="display: none;" class="cw">输入错误</span>
+			</div>
+			<div>
+				任务名称：
+				<input type="text" name="rw_name" class="rwmc" value=""  placeholder="请输入任务名称..." /><span id="zq2" style="display: none;" class="zq">输入正确</span>
+				<span id="cw2" style="display: none;" class="cw">输入错误</span>
+			</div>
+			<div>
+				时<span class="gb"></span>间：
+				<input type="text" name="time" class="shijian" value="" placeholder="输入格式为XXXX-XX-XX..." /><span id="zq3" style="display: none;" class="zq">输入正确</span>
+				<span id="cw3" style="display: none;" class="cw">输入错误</span>
+			</div>
+			<div>
+				负&nbsp;责&nbsp;人：
+				<input type="text" name="user" class="fzr" value="" placeholder="请输入负责人姓名..." /><span id="zq4" style="display: none;" class="zq">输入正确</span>
+				<span id="cw4" style="display: none;" class="cw">输入错误</span>
+			</div>
+			<input id="anniu" type="submit" value="添加" disabled="disabled" />
+		</form>
+		</fieldset>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+	<script type="text/javascript">
+
+		$(function() {
+			//任务等级
+			var form = document.forms["form"]
+			var dj = form["dengji"];
+			dj.onblur = function() {
+				var zq = document.getElementById("zq");
+				var cw = document.getElementById("cw");
+				zq.style.display = "none";
+				cw.style.display = "none";
+				var renwudj = /^[\u4e00-\u9fa5]{0,5}$/;
+				var val = this.value;
+				if(renwudj.test(val) && val != "" && val.length < 3) {
+					zq.style.display = "inline";
+				} else {
+					cw.style.display = "inline";
+				}
+				btn()
+			}
+			//		任务名称
+			var mc = form["rw_name"];
+			mc.onblur = function() {
+				var zq2 = document.getElementById("zq2");
+				var cw2 = document.getElementById("cw2");
+				zq2.style.display = "none";
+				cw2.style.display = "none";
+				var renwumc = /[\u4e00-\u9fa5]{0,5}/;
+				var renwumc2 = /[a-zA-Z0-9]{0,5}/;
+				var val1 = this.value;
+				if(renwumc.test(val1) && renwumc2.test(val1) && val1.length < 6 && val1 != "") {
+					zq2.style.display = "inline";
+				} else {
+					cw2.style.display = "inline";
+				}
+				btn()
+			}
+			//	时间
+			var time = document.form["time"];
+			time.onblur = function() {
+				var zq3 = document.getElementById("zq3");
+				var cw3 = document.getElementById("cw3");
+				var gs = document.getElementById("gs")
+				zq3.style.display = "none";
+				cw3.style.display = "none";
+				var sj = /^(?:(?!0000)[0-9]{0,4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{0,2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$/
+				var val2 = this.value;
+				if(sj.test(val2) && val2 != "") {
+					zq3.style.display = "inline";
+				} else {
+					cw3.style.display = "inline";
+				}
+				btn()
+			}
+			//负责人
+			var fzr = form["user"];
+			fzr.onblur = function() {
+				var zq4 = document.getElementById("zq4");
+				var cw4 = document.getElementById("cw4");
+				zq4.style.display = "none";
+				cw4.style.display = "none";
+				var xm = /^[\u4e00-\u9fa5]{0,4}$/;
+				var val3 = this.value;
+				if(xm.test(val3) && val3 != "") {
+					zq4.style.display = "inline";
+				} else {
+					cw4.style.display = "inline";
+				}
+				btn()
+			}
+
+			function btn() {
+				var t = 0;
+				for(var i = 0; i < $(".zq").length; i++) {
+					if($(".zq").eq(i).css("display") == "inline") {
+						t++;
+					}
+				}
+				if(t == 4) {
+					$("#anniu").removeAttr("disabled");
+				} else {
+					$("#anniu").attr("disabled","disabled");
+				}
+			}
+		})
+
+	</script>
+
+</html>

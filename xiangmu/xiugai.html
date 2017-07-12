@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人信息</title>
+		<style type="text/css">
+			#zhuce{
+				border: 1px gray solid;
+				width: 300px;
+				height: 400px;
+				position: absolute;
+				top: 50%;
+				margin-top: -16%;
+				left: 50%;
+				margin-left: -150px;
+				border-radius: 10px;
+			}
+			label{
+				margin-left:10px;
+			}
+			
+		</style>
+	</head>
+	<body style="background-image: url(img/QQ图片20170606205835.png);">
+		<form action="index.php?class=User&action=xiugai" method="post">
+			<div id="zhuce" style="text-align: center;">
+				<h1>个人信息</h1>
+				<br>
+				<label>
+					用户名：<input type="text" name="username" />
+				</label>
+				<br>			
+				<label>
+					密&nbsp;&nbsp;&nbsp;码：<input type="password" name="password" />
+				</label>
+				<br>					
+				<label style="margin-left: -6px;">
+					真实姓名：<input type="text" name="name" />
+				</label>
+				<br>
+				<label>
+					住&nbsp;&nbsp;&nbsp;址：<input type="text" name="dizhi" />
+				</label>
+				<br>
+				<label>
+					电&nbsp;&nbsp;&nbsp;话：<input type="text" name="phone" />
+				</label>
+				<br>
+				<label style="margin-left: 14px;">
+					email：<input type="text" name="email" />
+				</label>
+				<br>
+				<label>
+					信用卡：<input type="text" name="kahao" />
+				</label>
+				<br>
+			<input type="submit"  value="确认修改">
+			<a href="massage.html" style="position:absolute;top:360px;left:10px">取消修改</a>	
+			</div>
+		</form>
+	</body>
+	
+<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+<script type="text/javascript">
+			$(document).ready(
+				function(){
+					$.ajax({
+						type:"get",
+						datatype:"json",
+						url:"index.php?class=User&action=shuju",
+						success:function(res){
+								 res=eval(res);
+								$("input").eq(0).val(res[0]["username"]);
+								$("input").eq(1).val(res[0]["password"]);
+								$("input").eq(2).val(res[0]["name"]);
+								$("input").eq(3).val(res[0]["dizhi"]);
+								$("input").eq(4).val(res[0]["phone"]);
+								$("input").eq(5).val(res[0]["email"]);
+								$("input").eq(6).val(res[0]["kahao"]);
+							
+					}
+				})
+			})	
+		
+	</script>

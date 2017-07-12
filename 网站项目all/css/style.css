@@ -1,0 +1,103 @@
+.lunbo {
+	background: url(../images/nav_bottom.png) repeat-x 0 100%;
+	padding-bottom: 24px;
+	height: 550px;
+	overflow: hidden;
+	position: relative
+}
+
+.lunbo_img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden
+}
+
+.slide-item {
+	min-width: 996px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: none
+}
+
+.slide-item img {
+	width: 100%;
+	height: auto;
+	min-height: 320px
+}
+
+.thumbs {
+	position: absolute;
+	left: 0;
+	bottom: 24px;
+	z-index: 4;
+	width: 100%;
+	height: 100px;
+	margin: 0;
+	padding: 0;
+	border-bottom: 2px solid #fff;
+	border-top: 2px solid #fff;
+	
+}
+
+.thumbs li {
+	float: left;
+	list-style: none;
+	position: relative;
+	width: 20%;
+	*width: 19.99%;
+	height: 100px;
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	background-size: 100%
+}
+
+.thumbs li.curr,
+.thumbs li:hover {
+	background: url(../images/nav_bian.png) repeat-x 0 0;
+	cursor: pointer
+}
+
+.thumbs li div {
+	height: 82px;
+	padding-top: 18px;
+	border-left: 2px solid #fff;
+	border-right: 2px solid #fff
+}
+
+.thumbs li.curr i,
+.thumbs li:hover i {
+	display: block
+}
+
+.thumbs li span {
+	display: block;
+	margin: 0 18px;
+	line-height:100px ;
+	
+	/*background: url(../images/nav_bottom_bg.png) repeat 0 0;*/
+	height:122%;
+	width: 100%;
+	margin-left: -0.1%;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	margin-top: -6%;	
+}
+.thumbs li:hover{
+	background-color: lightblue;
+}
+.thumbs li.curr em{
+	display: block;
+	width: 11px;
+	height: 6px;
+	overflow: hidden;
+	background: url(../images/yellow-arrow.gif) no-repeat;
+	position: absolute;
+	top: -6px;
+	left: 50%;
+	margin: 0 0 0 -6px;
+}

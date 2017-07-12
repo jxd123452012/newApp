@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+			
+			.box {
+				width: 400px;
+				height: 400px;
+				background-color: red;
+				margin-top: 50px;
+				margin-left: 50px;
+				position: relative;
+			}
+			.box .move{
+				width: 180px;
+				height: 180px;
+				background-color: pink;
+				opacity: 0.5;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				display: none;
+			}
+			.box .bigimg{
+				width: 400px;
+				height: 400px;
+				background-color: aquamarine;
+				position: absolute;
+				left: 420px;
+				top: 0px;
+				overflow: hidden;
+				display: none;
+			}
+			.box .bigimg img{
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<img src="img/fangdajing.jpg" width="400px" height="400px"/>
+			<div class="move"></div>
+			<div class="bigimg"><img src="img/fangdajing.jpg" width="840px" height="850px"/></div>
+		</div>
+		
+	</body>
+	<script src="../js/jquery-1.11.0.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	//鼠标移动到元素内部去了显示隐藏的部分
+		$(".box").mouseover(function(){
+			$(".move").show();
+			$(".bigimg").show();
+		})
+		$(".box").mouseout(function(){
+			$(".move").hide();
+			$(".bigimg").hide();
+		})
+		//移动move
+		$(".box").mouseover(function(e){
+			//获取鼠标到浏览器左边或者上边的值
+			var w_l = e.clientX;
+			var w_t = e.clientY;
+			//获取box到浏览器的距离
+			var l = $(".box").offset().left;
+			var t = $(".box").offset().top;
+			var n_left = w_l-l-90; 
+			var n_top = w_t-t-90;
+			//判断距离是否超出box
+			if(n_left<0){
+				n_left = 0;
+			}else if(n_left>220){
+				n_left = 220;
+			}
+			if(n_top<0){
+				n_top=0;
+			}else if(n_top>220){
+				n_top = 220;
+			}
+			//改变move的距离跟随鼠标的变化而变化
+			$(".move").css({left:n_left,top:n_top});
+			//控制放大的区域
+			//比例
+			var w = n_left/$('.box').width();
+			var h = n_top/$('.box').height();
+			var img_l = w*$(".bigimg").width();
+			var img_t = h*$(".bigimg").height();
+			$(".bigimg img").css({left:-2*img_l,top:-2*img_t});
+		})
+	</script>
+</html>

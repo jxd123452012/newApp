@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+		<style type="text/css">
+		body{
+			margin: 0px;
+			padding: 0px;
+		}
+		
+			#beijing {
+				width: 100%;
+				height: 950px;
+				background: url(img/57-1511191H934.jpg) no-repeat;
+				background-size: cover;
+				overflow: hidden;
+				
+				
+			}
+			
+			.one{
+				margin-left:400px;
+				width: 240px;
+				height: 200px;
+				display: block;
+				border: 1px solid gainsboro;
+				filter:alpha(opacity=75);
+				background:url(img/3545947868.gif);
+				opacity:0.7;
+
+				
+			}
+			#first{
+				/*margin-top: 20px;*/
+				color: lightcyan;
+				font-size: 20px;
+			}
+			.one div{
+				margin-top: 15px;
+				margin-left: 10px;
+			}
+			.two{
+				font-family: "rockwell condensed";
+				color: lightpink;
+				font-size: large;
+			}
+			
+			.xiaoshi{
+				display: none;
+				
+			}
+			#shu{
+				display: inline-block;
+				font-size: 20px;
+				color: lightblue;
+				width: 25px;
+				height: 300px;
+				word-wrap:break-word;
+				text-align: center;
+				float: left;
+				margin-left:350px;
+				filter:alpha(opacity=75);
+			}	
+		</style>
+	</head>
+
+	<body>
+		<div id="beijing" class="img-responsive"  alt="Responsive image">
+			<span id="shu">
+				U3<div></div>5<div></div>A组世界
+			</span>
+			
+			<form class="one"name="one">
+					<div id="first">
+						用户登录(´･ω･`)
+					</div>
+					<div>
+						<label style="color: lightblue;">账户
+						<input type="text" id="user" name="username" placeholder="请输入账号" style="box-shadow: pink; border-radius: 4px; height: 18px; width: 130px; background-color: white; opacity: 0.4;"  />
+						<span id="a1" class="xiaoshi">
+							格式正确
+						</span>
+						<span id="a2" class="xiaoshi">
+							输入错误
+						</span>
+						</label>
+					</div>
+					<div>
+						<label style="color: lightblue;">密码
+						<input type="password" id="pass" name="password" placeholder="请输入密码" style="box-shadow: pink; border-radius: 4px; height: 18px; width: 130px; background-color: white; opacity: 0.4;" />
+						<span id="b1" class="xiaoshi">
+							输入正确
+						</span>
+						<span id="b2" class="xiaoshi">
+							输入错误
+						</span>
+					</label>
+					</div>
+					<div>
+						<input type="checkbox" name="check" style="opacity: 0.4; background-color: #DCA7A7;" />
+						<label style="color: lightblue;">记住密码
+					</label>
+					</div>
+
+					<div style="margin-left: 15px; margin-top: 10px;">
+						<input type="button" name="" id="denglu" value="登录" class="btn btn-info  btn-xs" />
+						<input type="button" name="" id="zhuce" value="注册" class="btn btn-info  btn-xs" style="margin-left: 15px;"/>
+					</div>
+				
+			</form>
+		</div>	
+	</body>
+		<script type="text/javascript">
+			var form=document.forms["one"];
+			var username=form["username"];
+			username.onblur=function(){
+				var zhengque= document.getElementById("a1");
+				var cuowu = document.getElementById("a2");
+				var reg = /^[a-zA-Z]{1,3}[0-9]{1,10}$/;
+				this.value;zhengque
+				zhengque.style.display="none";
+				cuowu.style.display="none";
+				
+				    if(reg.test(this.value)){
+			    	zhengque.style.display="inline";
+			    }else{
+			    	cuowu.style.display = "inline";
+			    }
+			}
+			
+			var mima =form["password"];
+			mima.onblur=function(){
+				var zhengque =document.getElementById("b1");
+				var cuowu = document.getElementById("b2");
+				var reg =/^[a-zA-Z]{1,3}[0-9]{1,10}$/
+				this.value;zhengque
+				zhengque.style.display="none";
+				cuowu.style.display="none";
+				
+				if(reg.test(this.value)){
+			    	zhengque.style.display="inline";
+			    }else{
+			    	cuowu.style.display = "inline";
+			    }
+			}
+			$("#zhuce").click(function(){
+				window.location="wbm-submit.html";
+			})
+			
+			$("#denglu").click(function(){
+				var user=$("#user").val();
+				var pass=$("#pass").val();
+				$.ajax({
+					url:"HTTP://192.168.2.40/webWork/select.php",
+					type:"get",
+					data:{
+						username:user,
+						password:pass
+					},
+					success:function(res){
+						console.log(res);
+						if(res=="成功"){
+							alert("登录成功");
+							setTimeout(function(){
+								window.location="shouye.html";
+							},1000)
+						}
+					}
+				})
+			})
+		</script>
+	
+
+</html>

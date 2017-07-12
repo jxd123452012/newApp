@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.css" />
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<link rel="stylesheet" href="css/xiangmu.css" />
+		<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.js">
+		</script>
+		<script type="text/javascript" src="js/jq.js">
+			
+		</script>
+	</head>
+
+	<body>
+		<div id="div_body">
+			<!--头部-->
+			<div id="div_top"><span id="span_top">U35 A</span>
+				<span id="span_top1">
+				组管理系统
+				</span>
+				<a href="#" id="a_top">
+					<span class="glyphicon glyphicon-user" id="span_tu"></span>
+					<span style="color: white;">U35 A组</span>
+				</a>
+			</div>
+			<!--左边	-->
+			<div id="body_left">
+				<form action="#" method="get">
+					<div class="col-lg">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search for...">
+							<span class="input-group-btn">
+        <button class="btn btn-default glyphicon glyphicon-search" type="button" id="btn"></button>
+      </span>
+						</div>
+						<!-- /input-group -->
+					</div>
+					<!-- /.col-lg-6 -->
+				</form>
+				<div id="body_left1"><span id="span_top3" class="glyphicon glyphicon-home"> 首页</span></div>
+				<div class="dropdown">
+					<button id="btn_2" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					  <span class="glyphicon glyphicon-user"></span> 人员管理
+					    <span id="span_top5" class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="width: 300px;position: relative;">
+						<li>
+							<a href="#">成员基本信息</a>
+						</li>
+						<li>
+							<a href="#">信息查询</a>
+						</li>
+						<li>
+							<a href="#">模型管理</a>
+						</li>
+						<li>
+							<a href="#">组员情况</a>
+						</li>
+						<li>
+							<a href="#">组员住址</a>
+						</li>
+					</ul>
+				</div>
+				<div class="dropdown">
+					<button id="btn_2" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					 <span class="glyphicon glyphicon-cog"></span> 系统基础
+					    <span id="span_top5" class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="width: 300px;position: relative;">
+						<li>
+							<a href="#">成员基本信息</a>
+						</li>
+						<li>
+							<a href="#">信息查询</a>
+						</li>
+						<li>
+							<a href="#">模型管理</a>
+						</li>
+						<li>
+							<a href="#">组员情况</a>
+						</li>
+						<li>
+							<a href="#">组员住址</a>
+						</li>
+					</ul>
+				</div>
+				<div class="dropdown">
+					<button id="btn_2" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					    <span class="glyphicon glyphicon-list-alt"></span> 任务管理
+					    <span id="span_top5" class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="width: 300px;position: relative;">
+						<li>
+							<a href="#">成员基本信息</a>
+						</li>
+						<li>
+							<a href="#">信息查询</a>
+						</li>
+						<li>
+							<a href="#">模型管理</a>
+						</li>
+						<li>
+							<a href="#">组员情况</a>
+						</li>
+						<li>
+							<a href="#">组员住址</a>
+						</li>
+					</ul>
+				</div>
+				<div class="dropdown">
+					<button id="btn_2" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					    <span class="glyphicon glyphicon-signal"></span> 查询统计
+					    <span id="span_top5" class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="width: 300px;position: relative;">
+						<li>
+							<a href="#">成员基本信息</a>
+						</li>
+						<li>
+							<a href="#">信息查询</a>
+						</li>
+						<li>
+							<a href="#">模型管理</a>
+						</li>
+						<li>
+							<a href="#">组员情况</a>
+						</li>
+						<li>
+							<a href="#">组员住址</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+			<!--中间	-->
+			<div id="body_middle">
+				<div id="middle_top1">任务管理</div>
+				<div id="middle_top2">
+					<span id="span_middlet1" class="glyphicon glyphicon-screenshot"></span>
+					<a href="#"><span id="a_middlet1">管理首页
+						<span class="glyphicon glyphicon-menu-right"></span>
+						<span class="glyphicon glyphicon-menu-right"></span>任务管理</span>
+					</a>
+				</div>
+				<div id="middle_top3">
+					<form action="http://192.168.2.54/webWork/selData.php" method="get">
+						<select name="nam" id="selects">
+							<option value="">值班任务</option>
+							<option value="">值班任务</option>
+							<option value="">值班任务</option>
+							<option value="">值班任务</option>
+							<option value="">值班任务</option>
+						</select>
+						<input type="text" name="" id="middle_input" value="关键字" />
+						<button id="btn_mid">搜索</button>
+						<input id="btn_mid1" type="button" value="添加" onclick="tianjia()"/>
+					</form>
+				</div>
+				<!--表格-->
+				<div id="middle_top4">
+					<table border="1" style="width: 1075px;" class="table-striped">
+					
+					</table>
+					<div id="zuihou">
+						<span id="wei">12条/页 共200条 <button>首页</button> <button>上一页</button> <button>1</button> <button>2</button> <button>3</button> <button>4</button> <button>5</button><span id="shenlue"><font size="1" color="gray"  >●●●</font></span> <button>下一页</button> <button>尾页</button></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,66 @@
+<?php
+session_start();
+$image = imagecreatetruecolor(150,40);//设置画布的宽高
+// echo imagesx($image);
+// echo "<br>";
+// echo imagesy($image);
+
+
+
+// imagedestroy($image);//销毁图像
+
+$bgcolor = imagecolorallocate($image, 255,255,255);//设置背景色
+
+imagefill($image, 0,0, $bgcolor);//吧验证码放在背景中从0坐标开始
+// $dianc = imagecolorallocate($image, 0,0,0);//画一个点放在画布上
+// $dianc = imagecolorallocate($image, rand(0,255),rand(0,255),rand(0,255));//让点的颜色也随机出来
+for($i=0;$i<100;$i++){//绘制点循坏很多点出来
+    $dianc = imagecolorallocate($image, rand(0,255),rand(0,255),rand(0,255));
+    $x = rand(1,imagesx($image));
+    $y = rand(1,imagesy($image));
+    imagesetpixel($image, $x, $y, $dianc);
+}
+//点的位置
+imageline($image, 0,0, 100, 30, $dianc);//绘制一条线从哪里开始
+for($i=0;$i<10;$i++){
+    $xian = imagecolorallocate($image, rand(0,255), rand(0,255), rand(0,255));//随机改变线的颜色
+    //起点位置
+    $x = rand(1,imagesx($image));
+    $y = rand(1,imagesy($image));
+    //重点位置
+    $x1 = rand(1,imagesx($image));
+    $y1 = rand(1,imagesy($image));
+    imageline($image, $x,$y, $x1, $y1, $xian);
+}
+//绘制图形--------------------------
+$color = imagecolorallocate($image, rand(0,255),rand(0,255),rand(0,255));
+// // imagerectangle($image, 2, 2, 70, 18, $color);//画一个矩形
+// // imagefilledrectangle($image, 2, 2, 50,5, $color);//画一个实心的矩形
+// $points = array(10,0,0,10,3,20,14,20,20,10);//六个分别代表三个坐标
+// imagepolygon($image, $points,5, $color);//3代表边数
+//绘制文字----------------------------------
+$arr = range("a", "z");
+for($i = 0;$i<10;$i++){
+    array_push($arr, $i);
+}
+$fontsize = 15;
+$count = 4;
+$codes = "";
+imagestring($image, 4, 10, 2, "", $color);//字体大小,xy坐标
+// imagettftext($image, 20, rand(-30,30), 2, 40, $color, "YGYXSZITI2.0.TTF", $arr[array_rand($arr)]);
+for($i=0;$i<4;$i++){
+   $xian = imagecolorallocate($image, rand(0,255), rand(0,255), rand(0,255));//随机改变字体的颜色
+    //起点位置
+    imageline($image, $x,$y, $x1, $y1, $xian);
+
+    $width = imagesx($image)/$count;
+    $code = $arr[array_rand($arr)];
+    imagettftext($image, 20, rand(-30,30),
+        $i*($width)+($width-$fontsize)/2,
+        ((imagesy($image)-$fontsize)/2+($fontsize)),
+        $color,"YGYXSZITI2.0.TTF",$code);
+    $codes.= $code;
+}
+$_SESSION["code"] = $codes;
+header("Content-Type:image/png");//设置头部
+imagepng($image);//建立png图形函数
