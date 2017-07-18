@@ -238,28 +238,11 @@
 		<div id="bg">
 			<div class="bg-div" id="lunbo">
 				<div id="header">
-					<div class="h-nav">
-						<ul>
-							<li>
-								<a href="">首页</a>
-							</li>
-							<li>
-								<a href="">个人介绍</a>
-							</li>
-							<li>
-								<a href="">我的作品</a>
-							</li>
-							<li>
-								<a href="">座右铭</a>
-							</li>
-						</ul>
-						<div id="box"></div>
-					</div>
 				</div>
 				<div>&nbsp;</div>
 				<div style="margin-top: 15%;margin-left: 48%;" id="tt">
 					<img src="img/shaui.jpg" style=" width: 200px; height: 200px;border-radius: 100px;" />
-					<h1 style=" width: 320px; margin-left: -40px;">&nbsp;&nbsp;&nbsp;Hallo !</h1>
+					<h1 style=" width: 320px; margin-left: 60px;">Hallo !</h1>
 				</div>
 			</div>
 			<div class="bg-div" style="background: url(img/007.jpg); background-attachment: fixed; background-position: center;">
@@ -297,7 +280,6 @@
 						<a href="xiangmu/zhuye/zhuye.html"><img src="img/daqian.jpg" /></a>大千瓷器商城</div>
 					<div style="margin-top: 30px;" id="e6" class="e2">
 						<a href="fangdajing.html"><img src="img/fangdajing.jpg" /></a>放大镜</div>
-
 				</div>
 			</div>
 			<div class="bg-div" style="background: url(img/lastl.jpg); background-attachment: fixed; background-position: center;">
@@ -367,7 +349,7 @@
 			<ul>
 				<li class="on">个人主页</li>
 				<li>个人介绍</li>
-				<li>我的作品</li>
+				<li class="dianwo"><span class="dianwo">我的作品</span></li>
 				<li>技能/工作/评价</li>
 			</ul>
 		</div>
@@ -426,6 +408,15 @@
 				}, 400);
 			});
 			//侧边栏部分-----
+
+			$(".dianwo").click(function(){
+				$("#e1").fadeIn(500);
+				$("#e2").fadeIn(2000);
+				$("#e3").fadeIn(4000);
+				$("#e4").fadeIn(6000);
+				$("#e5").fadeIn(8000);
+				$("#e6").fadeIn(10000);
+			})
 
 			var index = 0;
 			var wH = $(window).height(); //获取窗口的高度

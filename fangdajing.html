@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>放大镜</title>
+<title></title>
 </head>
 <style media="screen" type="text/css">
 *{
@@ -77,6 +77,7 @@
       var ev = window.event || e;
       var mouseleft = ev.offsetX || ev.layerX;
       var mousetop = ev.offsetY || ev.layerY;
+      document.title ="x:"+mouseleft +" | "+"y:"+ mousetop;
       // 计算色块的位置
       var boxleft = mouseleft - 220;
       var boxtop = mousetop - 200;
